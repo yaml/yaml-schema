@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+source "${YAML_SCHEMA_ROOT:?not set. Try: source .rc}"/.bpan/init
+
+getoptspec="
+"
+
+main() (
+:
+)
+
+main "$@"

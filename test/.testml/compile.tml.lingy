@@ -1,0 +1,13 @@
+{ "testml": "0.3.0",
+  "code": [
+    ["%<>",["*yes","*type"],
+      ["==",
+        [".",
+          ["*","yes"],
+          ["compile"],
+          ["dump"]],
+        ["*","type"]]]],
+  "data": [
+    { "Label": "Test 1",
+      "yes": "pair:\n- foo:\n    type: ++str[]\n    case:\n    - kind: Val\n      call: words\n- bar: ++str[]\n",
+      "type": "/:\n  kind: Map\n  pair:\n  - skey: foo\n    tval: Core/str[]\n    need: true\n  - skey: bar\n    tval: Core/str\n    need: true\n\nCore/str:\n  kind: Val\n  call: str\n"}]}

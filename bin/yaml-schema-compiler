@@ -1,0 +1,26 @@
+#!/usr/bin/env coffee
+
+fs = require 'fs'
+yaml = require 'yaml'
+global.say = console.log
+global.www = (o...)->
+  for e in o
+    console.dir e, depth: 10
+  return o[0]
+global.xxx = (o...)->
+  www o...
+  process.exit 1
+
+read = (file)->
+  if file == '-'
+    fs.readFileSync('/dev/stdin').toString()
+  else
+    fs.readFileSync(file).toString()
+
+main = ->
+  input = yaml.parse read '-'
+  compiler = new Compiler
+  schema = compiler.compile(input)
+  json = JSON.stringify(schema, null, 2)
+
+main()

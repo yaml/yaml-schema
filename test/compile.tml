@@ -1,0 +1,28 @@
+#!/usr/bin/env testml
+
+*yes.compile.dump == *type
+
+
+=== Test 1
+--- yes
+pair:
+- foo:
+    type: ++str[]
+    case:
+    - kind: Val
+      call: words
+- bar: ++str[]
+--- type
+/:
+  kind: Map
+  pair:
+  - skey: foo
+    tval: Core/str[]
+    need: true
+  - skey: bar
+    tval: Core/str
+    need: true
+
+Core/str:
+  kind: Val
+  call: str
